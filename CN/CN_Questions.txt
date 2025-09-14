@@ -1,0 +1,35 @@
+1. What is computer network?
+
+    A computer network in networking is a system where two or more computers or devices are connected together to share resources,
+exchange data, and communicate with each other.
+
+These devices can include computers, servers, smartphones, printers, and other hardware. 
+The connection can be established using wired (like Ethernet cables) or wireless (like Wi-Fi, Bluetooth) technologies.
+
+-> Purpose:
+
+      - Share files, applications, and data.
+
+      - Access shared hardware like printers, scanners, or storage.
+
+      - Enable communication through emails, chats, or video calls.
+
+       - Provide centralized storage and security.
+
+-> Types of Networks:
+
+      - LAN (Local Area Network): Covers a small area like an office, school, or home.
+
+      - MAN (Metropolitan Area Network): Spans a city or large campus.
+
+      - WAN (Wide Area Network): Covers a wide geographical area (e.g., the Internet).
+
+-> Components:
+
+         - Nodes/Devices: Computers, phones, servers.
+
+        - Transmission Medium: Cables, fiber optics, radio waves.
+
+        - Networking Devices: Routers, switches, hubs, modems.
+
+       - Protocols: Rules for communication (e.g., TCP/IP, HTTP, FTP).
