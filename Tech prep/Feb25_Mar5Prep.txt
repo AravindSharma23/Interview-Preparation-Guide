@@ -1,0 +1,129 @@
+HTML/CSS/JavaScript
+ 
+1.Write HTML & CSS to create a responsive navigation bar which collapses into a hamburger menu on mobile.
+ 
+2.Explain the differences between semantic & non-semantic HTML tags, and why semantics matters for accessibility and SEO.
+ 
+3.Using vanilla JavaScript (no frameworks), implement a dynamic tabbed interface where clicking each tab shows different content.
+   ---------------------
+JavaScript Frameworks / Libraries
+ 
+1.Compare the pros and cons of React vs Vue.js vs Angular for a new web app project.
+ 
+2.How do you manage state in a large frontend app (e.g., using Redux, Vuex or React Context)? Provide a code snippet.
+ 
+3.Write component code (in React) to fetch data from a REST API, handle loading + error states, and display results including explaining how you'd optimise for performance.
+ ------------------
+Web Performance / Optimisation
+ 
+1.What techniques do you use to improve page load time and render performance (e.g., code-splitting, lazy-loading, image optimisation, caching)?
+ 
+2.Explain what Critical Rendering Path is, and how you would optimise it in a single-page application.
+ 
+3.How do you measure performance of your frontend (tooling, metrics like Time To Interactive, First Contentful Paint etc.) and what steps follow from the findings?
+ ----------------------
+Accessibility / UX / Responsive Design
+ 
+1.Describe how you'd make sure your web app meets accessibility standards (e.g., ARIA roles, keyboard navigation, screen-reader support).
+ 
+2.How do you design/layout for mobile + tablet + desktop (responsive design)? Provide an example in CSS (flexbox/grid) and what you'd check.
+ 
+3.Explain how you'd incorporate UX best-practices (user flows, usability testing feedback) into the frontend development process.
+ -----------------------
+Deployment / Tooling / Collaboration
+ 
+1.What build tools / bundlers and version-control workflows do you prefer? Why?
+ 
+2.How do you integrate frontend work with backend APIs securely, manage environment variables, and handle dev builds?
+------------------------
+HTML
+ 
+1- What is the difference between id and class attributes?
+ 
+2- How does the doctype declaration affect a webpage?
+ 
+3-Explain semantic HTML and why it is important.
+ 
+4-What are meta tags, and what purpose do they serve?
+ 
+5-How do span and div elements differ?
+ ---------------------------
+JavaScript
+ 
+1-What are closures, and how are they used?
+ 
+2-Explain the difference between var, let, and const.
+ 
+3-What is the event loop in JavaScript?
+ 
+4-How does prototypal inheritance work?
+ 
+5-What are promises, and how do they compare to async/await?
+ 
+6-What is the difference between == and ===?
+ 
+7-What is hoisting, and how does it work in JavaScript?
+ 
+8-How do you handle errors in JavaScript?
+ 
+9-What is debouncing and throttling, and when would you use them?
+ 
+10-How would you implement a deep clone of an object without external libraries?
+ ---------------------------
+React
+ 
+1-What is the virtual DOM, and how does it work?
+ 
+2-How do functional components differ from class components in React?
+ 
+3-What are React Hooks, and why are they used?
+ 
+4-Explain the concept of lifting state up in React.
+ 
+5-What is the purpose of useEffect, and how is it used?
+ 
+6-How does the Context API work?
+ 
+7-What is the difference between controlled and uncontrolled components?
+ 
+8-How can you improve the performance of a React application?
+ 
+9-What are React Portals, and when should they be used?
+ 
+10-How would you create a custom hook to debounce user input?
+ -----------------------
+Accessibility (A11Y)
+ 
+1-What is ARIA, and why is it important?
+ 
+2-How would you ensure that a form is accessible?
+ 
+3-What are some common accessibility issues in web development?
+ 
+4-How can you make images accessible?
+ 
+5-What is a screen reader, and how does it work?
+ 
+6-How would you create an accessible navigation menu?
+ 
+7-What is the difference between using role="button" and a <button> element?
+ 
+8-How do you test a webpage for accessibility?
+ ---------------------------
+Optimization
+ 
+1-What is lazy loading, and how do you implement it?
+ 
+2-How can you reduce the size of a JavaScript bundle?
+ 
+3-What are the advantages of using a Content Delivery Network (CDN)?
+ 
+4-How do you optimize CSS delivery?
+ 
+5-What is caching, and how does it improve performance?
+ 
+6-What are critical rendering paths?
+ 
+7-How do you optimize for Time to First Byte (TTFB)?
+ 
+8-How do service workers enhance web performance?
