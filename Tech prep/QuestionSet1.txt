@@ -1,0 +1,14 @@
+ Event Delegation :
+  -> Technique in which parent handles event for its child elements using event bubbling and target.event property
+
+Event Bubbling :
+    ->Event travels from child element to parent.
+
+Event Capturing:
+    -> Event travels from parent to child.
+
+event.target
+     -> Element that triggered the event.
+
+event.currentTarget
+     -> Element where the event handler is attached.
