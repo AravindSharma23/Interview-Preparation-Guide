@@ -1,0 +1,37 @@
+
+1. REST (Representational State Transfer):
+REST is a simple, flexible API architecture that uses HTTP methods (GET, POST, PUT, DELETE) for communication.
+Data Format: JSON, XML.
+Eg: Ecommerce
+
+2. SOAP (Simple Object Access Protocol):
+SOAP is a more rigid protocol that requires XML based messaging for communication. Strict and secure protocol using XML for structured messaging.
+Data Format: XML
+Eg: Banking systems, payment gateways
+
+3. GraphQL:
+Modern query language that lets clients fetch only the data they need.
+Data Format: JSON
+Eg:FB
+
+4. gRPC: Google Remote Procedure Call
+High performance framework using Protocol Buffers (Protobuf).
+Data Format: Binary
+Eg : Google Internal Systems , Microservices
+
+5. WebRTC: Web Real Time Commmunication
+ Real-time peer-to-peer communication. Using in Audio calls, video calls, Sccreen sharing . Eg Gmeet, Zoom.
+
+6. WebSocket : 
+   When real-time, bidirectional communication is needed like chat apps, instead of request-response model of REST.
+
+7. WebHooks :
+  Event-driven callback . (event-based HTTP callback)
+  Flow :
+    1. You register URL
+    2. Event happens
+    3. Server sends POST request to your URL
+  Eg : Stripe &  Razorpay payment notification
+
+
+  
