@@ -78,3 +78,52 @@ Const : hoisted + initialized (available in TDZ)= throws reference err
   Hoisting is JavaScript’s default behavior where declarations are moved to the top of their scope.
   -  var : hoisted + initialized = undefined
   - let & Const : hoisted + initialized (available in TDZ) = throws reference err
+
+14. this Keyword :
+  - 'this' refers to the object that is currently executing the function.
+  - Its value based on how that function is called , not where its defined
+
+15. call() :
+     Calls function immediately.
+     pass args one by one 
+  Eg :
+    function greet(city) {
+        console.log(this.name + " from " + city);
+    }
+
+    const user = { name: "Aravind" };
+
+    greet.call(user, "Salem");
+
+   apply() :
+    - same as call
+     - args passed as array
+    Eg:  greet.apply(user, ["Chennai"]);
+
+  bind() :
+   - Doesn't call immediately
+   - Returns a new function
+  Eg : 
+   const fn = greet.bind(user, "Bangalore");
+    fn();
+16 . Closures :
+      When a function remebers variable from its lexical scope even after execution of outer                function 
+      Eg:
+       function outer() {
+          let count = 0;
+            return function inner() {
+             count++;
+           console.log(count);
+          };
+       }
+
+     const fn = outer();
+    fn();
+    fn();
+
+17. promise :
+     promise is an object that is a result of async operation (either success or failure).
+   Promise States :
+   - pending - initial state
+   - fulfilled - success(resolve)
+   - rejected - failure(reject)
