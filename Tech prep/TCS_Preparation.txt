@@ -1,0 +1,80 @@
+1.Difference between inline and block elements in html :
+BLOCK :
+ - Always start on a new line
+ - Take up the full width available (by default)
+ - Can contain inline elements and other block elements
+INLINE : 
+ - Do not start on a new line
+ - Only take up as much width as needed
+ - Typically contain text or other inline elements
+ - Cannot contain block elements 
+
+2. What is semantic HTML? Why important?
+ - means using HTML elements that clearly describe their meaning and purpose in the webpage structure.
+ - Instead of using generic tags like <div> and <span>
+Why semantic important :
+   -  Better Readability & Maintainability - > Code becomes easier to understand
+   - Improves Accessibility -> Screen readers (for visually impaired users) understand semantic tags better
+   - SEO (Search Engine Optimization) - Search engines like Google understand your content better
+   - Easier Styling & Debugging - You can target elements directly in CSS
+
+3. What is the difference between HTML and HTML5?
+  - HTML5 is the latest version of HTML with new semantic elements like <article>, <section>
+  -  Supports multimedia (<audio>, <video>) without plugins
+  - Provides APIs like Local Storage, Geolocation, Canvas
+
+4.localStorage → persists even after browser close
+sessionStorage → cleared when tab closes
+
+5.CSS box model :
+  It consists of Content , Padding ,Border ,Margin
+
+6. display: none → removes element from layout
+visibility: hidden → hides but keeps space
+
+7. Flex - layout model for aligning items in 1D (row or column).
+   Grid - 2D layout system (rows + columns).
+   Use Flexbox for components, Grid for page layout.
+
+8. How to make a website responsive?
+  - Use Flexbox/Grid
+  - Use media queries
+ -  Avoid fixed widths
+ -  Use responsive units like em,rem
+
+9. z - index :
+   - controls the vertical stacking order of elements (which appears on top).
+   -  Elements with a higher z-index value appear in front of lower ones.
+  Stacking Context : 
+   - A stacking context is like a separate layer/group where z-index works independently.
+
+10. How do you handle cross-browser issues?
+  - “I ensure cross-browser compatibility by using standard code, testing across browsers,
+adding fallbacks, and using tools like Autoprefixer and polyfills to handle unsupported features.”
+
+11. VAR, LET,CONST
+
+ var : hoisted + initialized = undefined
+  -  Function scoped
+  - Can be re-declared and updated
+  - Gets hoisted and initialized with undefined 
+Let :  hoisted + initialized (available in TDZ)= throws reference err
+  - Block scoped ({ })
+  - Can be updated, but NOT re-declared in same scope
+  - Hoisted but in Temporal Dead Zone (TDZ)
+Const : hoisted + initialized (available in TDZ)= throws reference err
+ - Block scoped
+ - Cannot be updated or re-declared
+ - Must be initialized at declaration
+ - Hoisted but in Temporal Dead Zone (TDZ)
+
+    
+12 . Temporal Dead Zone :
+  The TDZ is the time between:
+          -  When a variable is hoisted And when it is initialized
+    - During this time, accessing the variable throws an error
+
+13. Hoisting :
+  Hoisting is JavaScript’s default behavior where declarations are moved to the top of their scope.
+  -  var : hoisted + initialized = undefined
+  - let & Const : hoisted + initialized (available in TDZ) = throws reference err
