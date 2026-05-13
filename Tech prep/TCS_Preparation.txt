@@ -127,3 +127,81 @@ Const : hoisted + initialized (available in TDZ)= throws reference err
    - pending - initial state
    - fulfilled - success(resolve)
    - rejected - failure(reject)
+  Promise Methods :
+   -> 1. Promise.all():
+        - Wait for all promises to successed
+        - If one fails → entire thing fails
+    Eg :
+const p1 = Promise.resolve("User Data");
+const p2 = Promise.resolve("Posts Data");
+const p3 = Promise.resolve("Comments Data");
+
+Promise.all([p1, p2, p3])
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+O/P : ["User Data", "Posts Data", "Comments Data"]
+
+  ->2. Promise.race() :
+     - Returns the FIRST completed promise
+     - It may be (success OR failure)
+   Eg:
+  const p1 = new Promise((resolve) =>
+  setTimeout(() => resolve("Fast API"), 1000)
+);
+
+const p2 = new Promise((resolve) =>
+  setTimeout(() => resolve("Slow API"), 3000)
+);
+
+Promise.race([p1, p2])
+  .then((result) => console.log(result));
+
+O/P : Fast API
+
+->3. Promise.allSetteled() :
+   - Waits for ALL promises
+   - Doesn’t fail even if some reject.
+Eg : 
+const p1 = Promise.resolve("User API");
+const p2 = Promise.reject("Post API Failed");
+const p3 = Promise.resolve("Comment API");
+
+Promise.allSettled([p1, p2, p3])
+  .then((result) => console.log(result));
+O/P :
+ [
+  { status: "fulfilled", value: "User API" },
+
+  { status: "rejected", reason: "Post API Failed" },
+
+  { status: "fulfilled", value: "Comment API" }
+]
+->4. Promise.any() :
+    - Returns FIRST SUCCESSFUL promise
+    - Ignores rejected ones.
+Eg :
+const p1 = Promise.reject("Server 1 Failed");
+
+const p2 = new Promise((resolve) =>
+  setTimeout(() => resolve("Server 2 Success"), 2000)
+);
+
+const p3 = Promise.reject("Server 3 Failed");
+
+Promise.any([p1, p2, p3])
+  .then((result) => console.log(result))
+  .catch((error) => console.log(error));
+
+O/P : Server 2 Success
+
+Promise                                                         vs                        async/await 
+ 
+Promise has 3 states - resolved, rejected and pending.                      It does not have any states. It returns a promise either                                                                                    resolved or rejected.
+Error handling is done using .then() and .catch() methods.                  Error handling is done using .try() and .catch() methods.
+
+Error handling is done using .try() and .catch() methods.                   Using Async/Await makes it easier to read and understand the                                                                                 flow of the program as compared to promise chains. 
+
