@@ -205,3 +205,27 @@ Error handling is done using .then() and .catch() methods.                  Erro
 
 Error handling is done using .try() and .catch() methods.                   Using Async/Await makes it easier to read and understand the                                                                                 flow of the program as compared to promise chains. 
 
+18. Debouncing &  Throttling:
+     A function that delays execution until user stops triggered event.
+   Eg : User typing searchbox
+        without Debouncing - API called every key stroke 
+        with Debouncing - API called only once
+   function debounce(fn,delay){
+        let timer;
+       return function(...args){
+        clearTimeout(timer);
+          timer = setTimeout(()=>{
+            fn.apply(this,args);
+          },delay)
+         }
+     }
+  const handleSearch = debounce((value)=>{
+     console.log(value)
+  },1000)
+
+Throttling :
+    A function called at most once in a fixed time interval
+   Eg : 
+      User scrolls continously 
+      You want function every 1 second only
+
