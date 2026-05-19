@@ -229,3 +229,128 @@ Throttling :
       User scrolls continously 
       You want function every 1 second only
 
+
+
+19. EventLoop :
+    -> One of the most important concept in js .
+    -> Its a single threaded , it can execute only one task at a time.
+    -> Event loop helps to handle async operations like API Calling, Timers and events without blocking the main thread.
+
+Main Components in Event loop:
+    Call Stack
+     |
+    Web API
+     |
+    Micro Task Queue()
+     |
+    Macro Task Queue
+     |
+   Event Loop
+
+  Eg : Why we need Event loop :
+   
+    log("A");
+    log("B");
+setTimeout(()=>{log("Hello")},2000);
+    
+
+   o/p:
+    A
+    B
+    Hello
+Even though the timer is written before "B", it runs later.
+This happens because of the Event Loop mechanism.
+
+20. Currying in js :
+     Transforming a function with multiple arguments into multiple functions with  one argument each.
+     function add(a){
+          return function(b){
+          return function(c){
+          return a + b + c;
+        }
+       }
+      }
+
+console.log(add(2)(3)(4));
+
+21.Prototype in js :
+  -> Its an obj that inherits properties and methods from other objects.
+Eg :
+const person = {
+  greet() {
+    console.log("Hello");
+  }
+};
+
+const user = Object.create(person);
+
+user.greet(); // o/p: Hello
+ - > user object does NOT have greet(). so it inherits from person
+
+Prototype Chaining :
+  -> When js can't find  properties in a object , then it searches in its prototype.
+ If not found again, then moves to upward.
+Eg : const animal = {                             dog
+         eat : true                                |
+}                                                animal
+const dog = Object.create(animal);  
+ dog.barks = true                                   |
+console.log(dog.eat) // true                     prototype
+                                                    | null
+
+22. Lexical Scope :
+ -> Lexical scope means a function can access variables from its parent scope based on where the function is defined in the source code.
+
+23. Polyfills :
+  -> Custom implementation of js methods because if its not supports to browser
+Eg : debounce code 
+
+24. Virtual Dom:
+   state changes 
+       |
+   Creates a new Virtual DOM
+        |
+   Compare with old virtual DOM
+         |
+   Updates the changes elements in real DOM
+
+25. Lazy Loading :
+  -> Loading resources only when its needed instead of loading all resources initially.
+  EG: 
+   - Images are loading when it comes to viewport
+   - Components are loading when user navigates
+  Eg : 
+import React, { lazy, Suspense } from "react";
+
+const Home = lazy(() => import("./Home"));
+
+function App() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Home />
+    </Suspense>
+  );
+}
+pros : improves performance , Reduces bundle size 
+
+26.How to reduce JavaScript bundle size?
+   - Code splitting (use dynamic imports)
+   -  Tree shaking (remove unused code)
+  -  Minification (remove whitespaces and comments)
+  -  Compression (GZIP(older method) / Brotli(newer method) )
+  -  use modern builds (Import/export instead of require())
+
+Optimization flow:
+Write Code
+↓
+Tree Shaking
+↓
+Code Splitting
+↓
+Minification
+↓
+Compression
+↓
+Optimized Bundle
+
+
