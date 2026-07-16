@@ -1,0 +1,7 @@
+1. Virtual Dom :
+     -> Lightweight JavaScript representation of the Real DOM.
+     -> When the state or props of a component change, React creates a new Virtual DOM tree, compares it with the previous Virtual DOM,
+and updates only the changed parts in the Real DOM.
+    ->  This improves application performance by reducing expensive DOM manipulations.
+
+2. 
