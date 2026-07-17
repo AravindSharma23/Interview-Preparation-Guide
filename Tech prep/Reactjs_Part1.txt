@@ -4,4 +4,12 @@
 and updates only the changed parts in the Real DOM.
     ->  This improves application performance by reducing expensive DOM manipulations.
 
-2. 
+2. Reconciliation :
+    -> Reconciliation is the process React uses to compare the old Virtual DOM with the new Virtual DOM and determine the minimum number of changes required to update the Real DOM.
+    -> using Diffing Algorithm during this process.
+
+3. React Component Life cycle:
+   -> mounting  - Components are created and inserted into DOM.
+   -> Updating - DOM will be updated when state or props changed 
+   -> unmounting - components are removed from dom 
+   
