@@ -1,0 +1,11 @@
+1. What are React Hooks :
+      -> Hooks are functions that allows to  use state and lifecycle features in functional components (no need for class components).
+      -  Before Hooks → only class components could use state
+      -  After Hooks → functional components can do everything 
+
+        Why Hooks?
+          - Cleaner code
+          - Easier to reuse logic
+          - No 'this' confusion
+          - Better for modern React apps
+                                                                                                        
