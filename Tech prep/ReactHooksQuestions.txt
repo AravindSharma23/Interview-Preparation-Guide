@@ -28,4 +28,131 @@ React 18+ Hooks
        useSyncExternalStore – Subscribes to external stores safely (used in state libraries).
        useInsertionEffect – Runs before DOM mutations (mainly for CSS-in-JS libraries).
        Custom Hook – A reusable function that encapsulates and shares hook logic across components.
+
+What problem do Hooks solve?
+
+👉 They eliminate:
+
+ - Class components complexity
+ - this keyword confusion
+ - Code duplication (logic reuse)
+3. Explain useState with example.
+
+👉 Used to manage state in functional components
+
+const [count, setCount] = useState(0);
+4. How does useEffect work?
+
+👉 Handles side effects (API calls, subscriptions)
+
+useEffect(() => {
+  fetchData();
+}, []);
+5. What are dependencies in useEffect?
+
+👉 Controls when effect runs
+
+[] → run once
+[state] → run on state change
+no array → run always
+6. What is cleanup function in useEffect?
+
+ - A cleanup function in useEffect is a function that runs before the component is removed (unmounted)
+or before the effect runs again, to clean up side effects.
+   (or)
+- Cleanup function in useEffect is used to remove side effects like event listeners, timers, or subscriptions to avoid memory leaks.”
+
+useEffect(() => {
+  return () => console.log("cleanup");
+}, []);
+
+
+⚡ Advanced Hooks Questions
+7. Difference between useEffect and useLayoutEffect?
+“I use useEffect for most side effects, but useLayoutEffect when I need to read or modify the DOM
+before the browser paints to avoid flickering.”
+
+
+Feature	   |  useEffect	   |useLayoutEffect
+Execution time |	 After paint   |	Before paint
+Nature         |	Asynchronous   |	Synchronous
+UI blocking	   | ❌ No           |	✅ Yes (blocks rendering)
+Performance	   | Better	          | Can impact performance
+Use case       | 	API calls, subscriptions  | DOM measurements, layout changes
+
+
+🧠 How to Think About It
+
+👉 useEffect
+
+Runs later
+Doesn’t block UI
+User may briefly see un-updated UI
+
+👉 useLayoutEffect
+
+Runs immediately
+Blocks UI until done
+Prevents visual flicker
+
+
+8. What is useRef used for?
+
+👉 Store values without re-render + access DOM
+
+9. Difference between useRef and useState?
+useState	useRef
+Causes re-render	No re-render
+UI updates	Internal storage
+10. What is useMemo?
+
+👉 Optimizes expensive calculations
+
+const value = useMemo(() => compute(data), [data]);
+11. What is useCallback?
+
+👉 Memoizes functions
+
+const fn = useCallback(() => {}, []);
+12. Difference between useMemo and useCallback?
+useMemo	useCallback
+Returns value	Returns function
+13. When should you NOT use useMemo?
+
+👉 When computation is cheap (avoid over-optimization)
+
+🧠 State Management & Architecture
+14. What is useReducer?
+
+👉 Used for complex state logic (Redux-like)
+
+15. When to use useReducer vs useState?
+useState	useReducer
+Simple state	Complex logic
+Few updates	Multiple actions
+16. What is useContext?
+
+👉 Global state management without prop drilling
+
+17. What are custom hooks?
+
+👉 Reusable logic extracted into functions
+
+function useFetch() {
+  // reusable logic
+}
+⚠️ Rules & Best Practices
+18. What are Rules of Hooks?
+Only call at top level
+Only inside React functions
+Not inside loops/conditions
+19. What are common mistakes with Hooks?
+Missing dependency in useEffect
+Overusing useMemo
+Infinite loops
+Updating state incorrectly
+20. What causes infinite loop in useEffect?
+useEffect(() => {
+  setCount(count + 1);
+}, [count]); // ❌ infinite loop
                                                                                                         
