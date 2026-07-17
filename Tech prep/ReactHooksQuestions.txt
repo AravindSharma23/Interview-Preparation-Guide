@@ -8,4 +8,24 @@
           - Easier to reuse logic
           - No 'this' confusion
           - Better for modern React apps
+2. Hooks Definition
+  Core React Hooks :
+       useState – Manages state in a functional component.
+       useEffect – Handles side effects like API calls, subscriptions, and DOM updates.
+       useContext – Accesses global state without prop drilling.
+ Additional Built-in Hooks
+       useRef – Stores mutable values without causing re-renders and accesses DOM elements.
+       useMemo – Memoizes computed values to optimize performance.
+       useCallback – Memoizes functions to prevent unnecessary re-creations.
+       useReducer – Manages complex state logic using a reducer function.
+       useLayoutEffect – Runs synchronously after DOM updates but before the browser paints.
+       useImperativeHandle – Customizes the instance value exposed to parent components via refs.
+       useDebugValue – Displays custom labels for hooks in React DevTools.
+React 18+ Hooks
+       useId – Generates unique IDs for accessibility and SSR compatibility.
+       useTransition – Marks updates as non-urgent to keep UI responsive.
+       useDeferredValue – Defers updating a value to improve performance.
+       useSyncExternalStore – Subscribes to external stores safely (used in state libraries).
+       useInsertionEffect – Runs before DOM mutations (mainly for CSS-in-JS libraries).
+       Custom Hook – A reusable function that encapsulates and shares hook logic across components.
                                                                                                         
