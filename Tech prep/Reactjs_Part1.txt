@@ -12,4 +12,5 @@ and updates only the changed parts in the Real DOM.
    -> mounting  - Components are created and inserted into DOM.
    -> Updating - DOM will be updated when state or props changed 
    -> unmounting - components are removed from dom 
+
    
