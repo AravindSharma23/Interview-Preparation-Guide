@@ -156,3 +156,56 @@ useEffect(() => {
   setCount(count + 1);
 }, [count]); // ❌ infinite loop
                                                                                                         
+21. Difference between Redux and contextApi :
+Context API is a simple built-in state sharing feature, while Redux is a powerful external library 
+for managing complex global state with strict patterns.
+
+Comparison Table
+Feature    |	Context API 	     |Redux
+Type	     | Built-in React feature      |	External library
+Complexity |	Simple	           |     Complex
+Setup      | 	Minimal                |  	More boilerplate
+State management	 | Basic global state  | 	Advanced state management
+Performance  |	Can cause re-renders   | Optimized (fine-grained updates)
+Debugging	 | Limited	                 | Powerful (Redux DevTools)
+Middleware support |	❌ No            |	✅ Yes (Thunk, Saga)
+Best for	       |Small to medium apps	| Large-scale apps
+
+22. Controlled components vs unControlled components :
+  -  Controlled components are managed by React state, while uncontrolled components are managed by the DOM itself.
+
+Feature	       | Controlled Component  |	Uncontrolled Component
+Source of truth    |	React state	     | DOM
+Value handling     |	value + onChange | ref
+Re-render on change |	✅ Yes	     | ❌ No
+Control	        | Full control by React |	Less control
+Validation	        | Easy	              | Harder
+Use case	        | Forms with validation  |	Simple forms / quick inputs
+
+23. React Fragments :
+   - React Fragments allow grouping multiple elements without adding extra DOM nodes.
+ Wrong Example : // unwantedly added div to wrap
+    return (
+  <div>
+    <h1>Hello</h1>
+    <p>World</p>
+  </div>
+);
+
+using Fragment : // shorter version
+ return (
+  <>
+    <h1>Hello</h1>
+    <p>World</p>
+  </>
+);
+
+Full syntax :
+import React from "react";
+
+<React.Fragment>
+  <Child1 />
+  <Child2 />
+</React.Fragment>
+
+24.
