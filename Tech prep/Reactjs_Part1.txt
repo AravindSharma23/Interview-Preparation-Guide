@@ -9,6 +9,7 @@ and updates only the changed parts in the Real DOM.
     -> using Diffing Algorithm during this process.
 
 3. React Component Life cycle:
+  “React lifecycle methods are the different phases a component goes through—mounting, updating, and unmounting. In modern React, these are handled using the useEffect hook instead of class lifecycle methods.”
    -> mounting  - Components are created and inserted into DOM.
    -> Updating - DOM will be updated when state or props changed 
    -> unmounting - components are removed from dom 
