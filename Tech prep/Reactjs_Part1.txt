@@ -121,3 +121,21 @@ function App() {
     </Suspense>
   );
 }
+
+Benefits
+⚡ Faster page load
+📉 Reduced bundle size
+📱 Better performance on slow networks
+😎 Improved user experience
+
+When to Use
+
+👉 Use for:
+
+Large applications
+Route-based splitting
+Heavy components
+
+👉 Avoid for:
+
+Very small apps
