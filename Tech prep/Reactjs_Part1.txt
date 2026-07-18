@@ -98,4 +98,26 @@ Product list → Virtualization
 Filters → useMemo
 Add to cart → optimized state
 Images → lazy loading
-   
+
+5. Code splitting and Lazy Loading :
+   - Code Splitting breaks your app into smaller bundles, and Lazy Loading loads those bundles only when needed.
+   Why?
+Large bundle = slow initial load 🐢
+Smaller chunks = faster load ⚡
+
+Example for code splitting :
+const Home = () => import("./Home");
+const About = () => import("./About");
+
+Example for Lazy loading : 
+import React, { Suspense } from "react";
+
+const About = React.lazy(() => import("./About"));
+
+function App() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <About />
+    </Suspense>
+  );
+}
