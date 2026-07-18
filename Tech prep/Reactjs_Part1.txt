@@ -14,4 +14,88 @@ and updates only the changed parts in the Real DOM.
    -> Updating - DOM will be updated when state or props changed 
    -> unmounting - components are removed from dom 
 
+4. How do you optimize React performance? 
+  - I optimize React performance by preventing unnecessary re-renders, memoizing components, optimizing state updates, and using techniques like lazy loading and virtualization.
+  - “I first identify performance bottlenecks using React DevTools, then optimize using memoization (React.memo, useMemo, useCallback), reduce unnecessary re-renders, apply code-splitting, and use virtualization for large datasets.” 
+
+Key Techniques
+1. Avoid Unnecessary Re-renders
+
+👉 Use:
+
+React.memo → for components
+useMemo → for values
+useCallback → for functions
+const MyComponent = React.memo(({ value }) => {
+  return <div>{value}</div>;
+});
+2. Use Proper State Management
+
+👉 Keep state:
+
+Minimal
+Close to where it's used
+
+❌ Bad: Global everything
+✅ Good: Localized state
+
+3. Optimize useEffect
+
+👉 Avoid:
+
+Missing dependencies
+Infinite loops
+useEffect(() => {
+  fetchData();
+}, []); // correct
+4. Code Splitting (Lazy Loading)
+
+👉 Load components only when needed
+
+const LazyComponent = React.lazy(() => import("./LazyComponent"));
+5. Use List Optimization (Keys)
+
+👉 Always use unique keys
+
+items.map(item => <Item key={item.id} />)
+6. Virtualization (Important for Large Lists)
+
+👉 Render only visible items
+
+Libraries:
+
+react-window
+react-virtualized
+7. Debouncing & Throttling
+
+👉 Prevent too many API calls
+
+Example:
+
+Search input optimization
+8. Avoid Inline Functions & Objects
+
+❌ Causes re-render every time
+
+<button onClick={() => doSomething()} />
+
+✅ Use useCallback
+
+9. Use Production Build
+
+👉 Production build is faster than development
+
+npm run build
+10. Optimize Images & Assets
+Compress images
+Use modern formats (WebP)
+Lazy load images
+🧠 Real-Life Example
+
+👉 E-commerce app
+
+Product list → Virtualization
+Filters → useMemo
+Add to cart → optimized state
+Images → lazy loading
    
