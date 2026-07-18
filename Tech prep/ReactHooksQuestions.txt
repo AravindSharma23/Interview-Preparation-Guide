@@ -208,4 +208,15 @@ import React from "react";
   <Child2 />
 </React.Fragment>
 
-24.
+24. What is a “Performance Bottleneck”?
+
+ A bottleneck is anything that slows down your React app or makes it less responsive.
+
+ 🔍 Real Examples of Bottlenecks
+🔁 Component re-rendering too many times
+🐢 Slow API calls affecting UI
+📜 Rendering huge lists (1000+ items)
+⚙️ Heavy calculations inside render
+🎯 Unoptimized state updates
+
+25. 
