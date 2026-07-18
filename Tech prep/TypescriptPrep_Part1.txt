@@ -1,0 +1,45 @@
+1. Why TypeScript instead of JavaScript?
+    “TypeScript is a superset of JavaScript that adds static typing, which helps catch errors at compile time, improves code readability,
+and makes large-scale applications easier to maintain.”
+
+  Key Points to Add:
+ - Early error detection
+ - Better IDE support (autocomplete, refactoring)
+ - Improved code scalability
+ - Safer code with types
+
+2. Interface vs type :
+  -  “Both are used to define types in TypeScript, but interfaces are mainly for object shapes and support extension,
+while types are more flexible and can represent unions, primitives, and complex structures.”
+
+| Feature     | Interface        | Type                              |
+| ----------- | ---------------- | --------------------------------- |
+| Extending   | `extends`        | `&` (intersection)                |
+| Flexibility | Less             | More                              |
+| Use case    | Objects, classes | Unions, primitives, complex types |
+
+3. Generics :
+   - “Generics allow us to create reusable components or functions that work with multiple data types while maintaining type safety.”
+
+  function identity<T>(value: T): T {
+  return value;
+}
+
+4. Optional Chaining :
+  - “Optional chaining (?.) allows safe access to nested object properties without throwing errors if a value is null or undefined.”
+ Eg :  user?.address?.city
+
+5.  any vs unknown :
+   - “any disables type checking completely, while unknown is a safer alternative that requires type checking before usage.”
+| Feature        | any    | unknown          |
+| -------------- | ------ | ---------------- |
+| Type safety    | ❌ None | ✅ Safe           |
+| Usage          | Direct | Needs type check |
+| Recommendation | Avoid  | Prefer           |
+
+Eg : 
+ let value: unknown = "hello";
+
+if (typeof value === "string") {
+  console.log(value.toUpperCase()); // safe
+}
