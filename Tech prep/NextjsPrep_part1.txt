@@ -188,3 +188,54 @@ Built dashboard using SSR for dynamic data
 Used API routes for backend
 Used middleware for auth
 Optimized using image and lazy loading
+
+26 . ISR - Incremental Static Regeneration
+     “ISR allows you to update static pages after deployment without rebuilding the entire site.”
+      🧠 Simple Idea
+SSG → builds once 🏗️
+ISR → builds + updates later 🔁
+
+👉 Best of SSG + SSR combined
+Eg : 
+export async function getStaticProps() {
+  const res = await fetch("https://api.example.com/data");
+  const data = await res.json();
+
+  return {
+    props: { data },
+    revalidate: 10, // every 10 seconds it updates 
+  };
+}
+27 . App router vs Page router :
+    App Router is the newer routing system in Next.js that supports server components, layouts, and modern data fetching, while Pages Router is the older approach using getStaticProps and getServerSideProps. App Router is now recommended for new applications.
+   | App Router                                  | Pages Router             |
+| ------------------------------------------- | ------------------------ |
+| `page.tsx` is required                      | Any file becomes a route |
+| Special files (`layout.tsx`, `loading.tsx`) | No special structure     |
+
+28 . Explain Next.js caching & rendering strategy :
+   - “Next.js optimizes performance using multiple caching layers (data, full route, router cache) and flexible rendering strategies (SSG, SSR, ISR, CSR), controlled mainly through the fetch API and route configuration.”
+    - Explain  about Rendering strategies SSR,SSG,CSR,ISR .
+  Caching Layers :
+     1. 🧠 Data Cache
+
+👉 Caches API responses (fetch)
+
+Example
+await fetch("https://api.com/data"); // cached
+Control it:
+cache: "force-cache" (default)
+cache: "no-store"
+next: { revalidate: 10 }
+2. 📄 Full Route Cache
+
+👉 Stores the entire rendered HTML
+
+Used for static pages
+Served instantly from cache
+3. ⚡ Router Cache (Client-side)
+
+👉 Stores previously visited routes in browser
+
+Faster navigation
+No refetch needed
