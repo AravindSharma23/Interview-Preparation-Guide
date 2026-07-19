@@ -1,0 +1,145 @@
+1. CSS Box Model
+
+The CSS Box Model defines how elements are structured and spaced in a webpage.
+
+It consists of:
+Content – actual text/image
+Padding – space inside the element (around content)
+Border – wraps padding and content
+Margin – space outside the element
+Formula:
+Total Width = Content + Padding + Border + Margin
+Example:
+div {
+  width: 200px;
+  padding: 10px;
+  border: 5px solid black;
+  margin: 20px;
+}
+
+👉 Total width = 200 + 20 + 10 + 40 = 270px
+
+Important:
+box-sizing: border-box; → includes padding & border inside width
+2. Flexbox vs Grid
+Flexbox (1D layout)
+Works in one direction (row OR column)
+Best for components / small layouts
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+Grid (2D layout)
+Works in rows AND columns
+Best for full-page layouts
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+Key Differences:
+Feature	Flexbox	Grid
+Dimension	1D	2D
+Use case	Components	Layouts
+Control	Limited	Precise placement
+Alignment	Easier	More powerful
+
+👉 Interview Tip:
+
+"Use Flexbox for UI components and Grid for page layout."
+
+3. Position: relative vs absolute vs fixed vs sticky
+relative
+Positioned relative to itself
+div {
+  position: relative;
+  top: 10px;
+}
+absolute
+Positioned relative to nearest positioned parent
+.parent {
+  position: relative;
+}
+.child {
+  position: absolute;
+  top: 0;
+}
+fixed
+Stays fixed on screen (ignores scroll)
+header {
+  position: fixed;
+  top: 0;
+}
+sticky
+Acts like relative → then sticks when scrolling
+nav {
+  position: sticky;
+  top: 0;
+}
+Quick Summary:
+Type	Reference	Scroll Behavior
+relative	itself	moves normally
+absolute	parent	scrolls with page
+fixed	viewport	stays fixed
+sticky	viewport (after threshold)	sticks on scroll
+4. How do you make a page responsive?
+Key techniques:
+1. Media Queries
+@media (max-width: 768px) {
+  body {
+    background: red;
+  }
+}
+2. Flexible Layouts
+Use %, vw, vh instead of fixed px
+3. Flexbox / Grid
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+4. Responsive Images
+img {
+  max-width: 100%;
+  height: auto;
+}
+5. Mobile-first approach
+Design for small screens first, then scale up
+
+👉 Interview Tip:
+
+"I use mobile-first design, flexible units, media queries, and modern layouts like Flexbox/Grid to ensure responsiveness."
+
+5. CSS Specificity
+
+Specificity decides which CSS rule gets applied when multiple rules target the same element.
+
+Priority order:
+Inline styles → style=""
+ID selectors → #id
+Class / attribute / pseudo-class → .class
+Element selectors → div, p
+Example:
+#id {
+  color: red;
+}
+.class {
+  color: blue;
+}
+p {
+  color: green;
+}
+
+👉 Result → red (ID wins)
+
+Specificity Score:
+Inline → 1000
+ID → 100
+Class → 10
+Element → 1
+Important:
+!important overrides everything (avoid using it)
+
+👉 Interview Tip:
+
+"Specificity determines which styles apply based on selector weight, and conflicts are resolved by priority and order."
