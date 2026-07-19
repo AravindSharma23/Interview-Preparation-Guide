@@ -1,0 +1,190 @@
+1. What is Next.js?
+
+Answer:
+Next.js is a React framework that provides features like:
+
+Server-Side Rendering (SSR)
+Static Site Generation (SSG)
+File-based routing
+API routes
+Built-in performance optimizations
+
+It helps build SEO-friendly and fast web applications.
+
+2. What is the difference between CSR, SSR, and SSG?
+
+Answer:
+
+CSR (Client-Side Rendering): Rendering happens in browser (React default)
+SSR (Server-Side Rendering): Page generated on each request (via getServerSideProps)
+SSG (Static Site Generation): Pages generated at build time (getStaticProps)
+
+👉 SSR = dynamic data
+👉 SSG = fast + cacheable
+
+3. What is file-based routing in Next.js?
+
+Answer:
+In Next.js, routing is based on the file structure inside the pages or app folder.
+
+Example:
+
+pages/about.js → /about
+pages/blog/[id].js → /blog/1
+4. What are dynamic routes?
+
+Answer:
+Dynamic routes allow you to create pages with parameters.
+
+Example:
+
+pages/product/[id].js
+
+Access:
+
+const router = useRouter();
+console.log(router.query.id);
+5. What is getServerSideProps?
+
+Answer:
+Used for SSR. It fetches data on every request.
+
+export async function getServerSideProps() {
+  const data = await fetch("API");
+  return { props: { data } };
+}
+6. What is getStaticProps?
+
+Answer:
+Used for SSG. Data is fetched at build time.
+
+export async function getStaticProps() {
+  return { props: { data } };
+}
+7. What is getStaticPaths?
+
+Answer:
+Used with dynamic routes in SSG to define which pages to pre-render.
+
+8. What is Incremental Static Regeneration (ISR)?
+
+Answer:
+Allows updating static pages after deployment.
+
+return {
+  props: { data },
+  revalidate: 10
+}
+
+👉 Page updates every 10 seconds.
+
+9. What are API routes in Next.js?
+
+Answer:
+Next.js allows backend logic inside pages/api.
+
+Example:
+
+pages/api/user.js
+export default function handler(req, res) {
+  res.status(200).json({ name: "John" });
+}
+10. What is the app directory (Next.js 13+)?
+
+Answer:
+New routing system with:
+
+Server Components (default)
+Layouts
+Streaming
+Better performance
+⚡ Intermediate Questions (Very Important)
+11. What are Server Components vs Client Components?
+
+Answer:
+
+Server Components: Run on server, no JS sent to browser
+Client Components: Run in browser ("use client")
+12. What is use client?
+
+Answer:
+Marks a component as a client-side component.
+
+13. How does Next.js improve performance?
+
+Answer:
+
+Code splitting
+Image optimization (next/image)
+SSR/SSG
+Lazy loading
+Prefetching
+14. What is next/image?
+
+Answer:
+Optimized image component with:
+
+Lazy loading
+Automatic resizing
+WebP support
+15. What is next/link?
+
+Answer:
+Used for client-side navigation.
+
+<Link href="/about">About</Link>
+16. What is middleware in Next.js?
+
+Answer:
+Runs before request is completed (for auth, redirects).
+
+17. How do you handle authentication in Next.js?
+
+Answer:
+
+JWT + cookies
+Middleware for protected routes
+Libraries like NextAuth
+18. How is Next.js different from React?
+
+Answer:
+
+React	Next.js
+Library	Framework
+CSR only	SSR + SSG
+Manual routing	File-based routing
+No backend	API routes
+19. What is hydration?
+
+Answer:
+Process where React attaches event listeners to server-rendered HTML.
+
+20. What are layouts in Next.js?
+
+Answer:
+Reusable UI structure (header, sidebar, etc.)
+
+🧠 Scenario-Based Questions (Very Important for You)
+21. When would you use SSR vs SSG?
+SSR → frequently changing data (dashboard)
+SSG → static pages (blog, landing page)
+22. How would you optimize a slow Next.js app?
+Use SSG instead of SSR
+Use next/image
+Lazy load components
+Reduce client bundle
+23. How to protect routes in Next.js?
+Middleware
+Check token in cookies
+Redirect unauthorized users
+24. How do you fetch data in Next.js 13+?
+Server components → direct fetch()
+Client components → useEffect
+25. Explain a real project using Next.js (prepare this!)
+
+Example answer:
+
+Built dashboard using SSR for dynamic data
+Used API routes for backend
+Used middleware for auth
+Optimized using image and lazy loading
