@@ -43,3 +43,140 @@ Eg :
 if (typeof value === "string") {
   console.log(value.toUpperCase()); // safe
 }
+
+6 . What is Type Inference?
+
+👉 TypeScript automatically determines types without explicit annotation.
+
+7 . What is Union Type?
+  - Variable can hold multiple types.
+  Eg :     let value: string | number;
+
+8 . What is Intersection Type?
+   -  Combines multiple types into one.
+   Eg  :
+      type A = { name: string };
+type B = { age: number };
+
+type C = A & B;
+
+9. What is Type Assertion? 
+  -  Tells TypeScript about the type explicitly.
+  Eg :  let value = "hello" as string;
+
+10. enum :
+  - Enum is a way to define a set of named constants. It makes your code more readable .
+ enum Direction {
+  Up, // 0
+  Down, // 1
+  Left, // 2
+  Right // 3
+}
+Where to Use Enums
+
+✅ API status
+✅ User roles
+✅ Application states
+✅ Fixed constants
+
+11 . What are Utility Types in TypeScript?
+    - Utility types are built-in generic types that help transform and manipulate existing types easily.
+     1. Partial<T>
+
+👉 Makes all properties optional
+
+type User = {
+  name: string;
+  age: number;
+};
+
+type PartialUser = Partial<User>;
+
+✅ Result:
+
+{
+  name?: string;
+  age?: number;
+}
+2. Required<T>
+
+👉 Makes all properties required
+
+type User = {
+  name?: string;
+};
+
+type RequiredUser = Required<User>;
+3. Readonly<T>
+
+👉 Makes properties immutable
+
+type User = {
+  name: string;
+};
+
+const user: Readonly<User> = { name: "John" };
+// user.name = "Doe"; ❌ Error
+4. Pick<T, K>
+
+👉 Select specific properties
+
+type User = {
+  name: string;
+  age: number;
+};
+
+type NameOnly = Pick<User, "name">;
+5. Omit<T, K>
+
+👉 Remove specific properties
+
+type User = {
+  name: string;
+  age: number;
+};
+
+type WithoutAge = Omit<User, "age">;
+6. Record<K, T>
+
+👉 Create object type with keys and values
+
+type Roles = "admin" | "user";
+
+const rolePermissions: Record<Roles, boolean> = {
+  admin: true,
+  user: false,
+};
+7. Exclude<T, U>
+
+👉 Removes types from union
+
+type A = string | number;
+type B = Exclude<A, number>; // string
+8. Extract<T, U>
+
+👉 Extracts common types
+
+type A = string | number;
+type B = Extract<A, string>; // string
+9. NonNullable<T>
+
+👉 Removes null and undefined
+
+type A = string | null | undefined;
+type B = NonNullable<A>; // string
+🎯 Real-Time Example
+
+👉 API Update Case
+
+type User = {
+  id: number;
+  name: string;
+  email: string;
+};
+
+function updateUser(user: Partial<User>) {
+  // only send changed fields
+}
+
+👉 Only updated fields are required
