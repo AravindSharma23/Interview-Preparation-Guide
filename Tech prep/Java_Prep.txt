@@ -1,0 +1,159 @@
+1. Class :
+    - A Class in Java is a blueprint or template used to create objects.
+    - It defines the properties (data) and behaviors (methods) 
+
+2. Object :
+     -  Object is a instance of class that represents real world entity.
+     -  It is used to access the variables and methods defined inside a class.
+
+3. Constructor :
+     - Its a special class member that automatically invokde when object is created by using 'new' keyword and initializes an object with default values.
+     - Constructor name must be the same as the class name.
+     -   It does not have any return type, not even void.
+ Types of Constructors :
+    Default constructor :
+          - A constructor that does not accept any parameters and initializes an object with default values.
+    Parameterized Constructor :
+          - A constructor that accepts parameters to initialize an object with specific values.
+   Copy constructor :
+          -  A user-defined constructor that creates a new object by copying the data of another object of the same class.
+  Private Constructor :
+          - A constructor declared with the private access modifier that prevents object creation from outside the class.
+
+Example of copy constructor :
+ class Student {
+  String name;
+  int age;
+
+  // Normal constructor
+  Student(String name, int age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  // Copy constructor
+  Student(Student s) {
+    this.name = s.name;
+    this.age = s.age;
+  }
+
+  void display() {
+    System.out.println(name + " " + age);
+  }
+
+  public static void main(String[] args) {
+    Student s1 = new Student("John", 20);
+
+    // Creating new object using copy constructor
+    Student s2 = new Student(s1);
+
+    s1.display(); // John 20
+    s2.display(); // John 20
+  }
+}
+
+4. Abstract class :
+         “An abstract class is a class that cannot be instantiated and can contain both abstract and concrete methods.”
+    Syntax:
+abstract class ClassName {
+    abstract void methodName();   // Abstract method
+ void concreteMethod() {        // Concrete method
+     System.out.println("Method implementation");
+   }
+
+Eg :
+ abstract class Shape {
+
+    String color;
+
+    // Constructor
+    Shape(String color) {
+        this.color = color;
+    }
+
+    // Abstract method
+    abstract double area();
+
+    // Concrete method
+    void getColor() {
+        System.out.println("Color: " + color);
+    }
+}
+
+class Circle extends Shape {
+
+    int radius;
+
+    Circle(String color, int radius) {
+        super(color);
+        this.radius = radius;
+    }
+
+    double area() {
+        return 3.14 * radius * radius;
+    }
+}
+
+public class GFG{
+    public static void main(String[] args) {
+        Shape s = new Circle("Red", 5);
+        s.getColor();
+        System.out.println("Area: " + s.area());
+    }
+}
+
+. Abstraction :
+   “Abstraction in Java is achieved using abstract classes or interfaces to hide implementation details and expose only essential functionality.”
+
+   Example :
+
+   abstract class Vehicle {
+
+  // Abstract method (no implementation)
+  abstract void start();
+
+  // Concrete method
+  void fuelType() {
+    System.out.println("Uses fuel or electricity");
+  }
+}
+
+// Subclass
+class Car extends Vehicle {
+
+  // Providing implementation
+  void start() {
+    System.out.println("Car starts with a key or button");
+  }
+}
+
+class Bike extends Vehicle {
+
+  void start() {
+    System.out.println("Bike starts with a kick or self-start");
+  }
+}
+
+// Main class
+public class Main {
+  public static void main(String[] args) {
+
+    Vehicle v1 = new Car();   // abstraction
+    Vehicle v2 = new Bike();
+
+    v1.start();
+    v1.fuelType();
+
+    v2.start();
+    v2.fuelType();
+  }
+}
+
+Encapsulation :
+   - process of wrapping data and methods into a single unit .
+   - Data members are hidden using the private access modifier.
+  - Access to data is provided through public getter and setter methods.
+  - It improves data security, maintainability, and controlled access.
+  -
+
+  
